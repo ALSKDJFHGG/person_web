@@ -29,7 +29,7 @@ personal-web
 ## 页面公开访问方式或说明
 - **本地访问**：直接在浏览器中打开 [index.html](index.html) 文件
 - **部署访问**：可部署至 GitHub Pages、Vercel 等静态托管平台
-- **GitHub 仓库**：https://github.com/alskdjfhgg/per_web
+- **GitHub 仓库**：https://github.com/alskdjfhgg/person_web
 
 ## 本作业中你认为最能体现"软件作品"而不只是"单个页面"的一点
 **CSS 变量系统与模块化设计**。通过 `:root` 定义统一的色彩变量、阴影效果和过渡动画，实现了：
