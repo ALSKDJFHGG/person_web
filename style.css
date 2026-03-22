@@ -1,0 +1,256 @@
+/* CSS 变量定义 - 提高可维护性 */
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --header-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    --skill-gradient: linear-gradient(135deg, #11998e, #38ef7d);
+    --interest-gradient: linear-gradient(135deg, #ee9ca7, #ffdde1);
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --content-bg: linear-gradient(180deg, #ffffff 0%, #f8f9ff 100%);
+    --shadow-light: 0 4px 15px rgba(102, 126, 234, 0.3);
+    --shadow-hover: 0 6px 20px rgba(102, 126, 234, 0.4);
+    --transition: all 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-gradient);
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+}
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: var(--header-gradient);
+    color: white;
+    position: relative;
+}
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+}
+.avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+}
+.avatar:hover {
+    transform: scale(1.05);
+}
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+h1 { 
+    font-size: 2.2rem; 
+    margin-bottom: 8px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.title { font-size: 1.1rem; opacity: 0.9; }
+.content { 
+    padding: 40px;
+    background: var(--content-bg);
+}
+.contact-list {
+    list-style: none;
+    margin: 25px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.contact-list li {
+    background: var(--primary-gradient);
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    margin: 0 auto;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+}
+.contact-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+.contact-list a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.5px;
+}
+.contact-list a:hover {
+    color: #f0f0f0;
+    transform: translateX(5px);
+}
+.link-icon {
+    font-size: 1.1rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+.bio { 
+    margin: 30px 0; 
+    color: #555;
+    line-height: 1.8;
+    padding: 20px;
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+}
+.bio-interest-wrapper {
+    display: flex;
+    gap: 30px;
+    margin: 30px 0;
+}
+.bio-section {
+    flex: 2;
+}
+.interest-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.btn {
+    display: inline-block;
+    background: #e74c3c;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+}
+.btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+.tags-section {
+    margin-top: 30px;
+}
+.tags-title {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 15px;
+    font-weight: 600;
+    position: relative;
+    padding-left: 15px;
+}
+.tags-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(180deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.tag {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+.tag:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5);
+}
+.tag.skill {
+    background: var(--skill-gradient);
+    box-shadow: 0 2px 8px rgba(17, 153, 142, 0.3);
+}
+.tag.skill:hover {
+    box-shadow: 0 5px 15px rgba(17, 153, 142, 0.5);
+}
+.tag.interest {
+    background: var(--interest-gradient);
+    color: #555;
+    box-shadow: 0 2px 8px rgba(238, 156, 167, 0.3);
+}
+.tag.interest:hover {
+    box-shadow: 0 5px 15px rgba(238, 156, 167, 0.5);
+}
+@media (max-width: 600px) {
+    .container { margin: 20px auto; }
+    header { padding: 30px 15px; }
+    .content { padding: 25px; }
+    h1 { font-size: 1.8rem; }
+    .contact-list { flex-direction: column; }
+    .info-cards { flex-direction: column; }
+    .bio-interest-wrapper { flex-direction: column; }
+    .interest-section { width: 100%; }
+}
+
+.info-content {
+    margin-left: 0;
+    margin-right: auto;
+}
+.info-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 20px 0;
+}
+.info-card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px 10px;
+    border-radius: 12px;
+    text-align: center;
+    transition: var(--transition);
+    cursor: default;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.info-card:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+.card-label {
+    display: block;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+.card-value {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+}
